@@ -30,7 +30,7 @@ source=(
     'load-config.js.patch'
 )
 noextract=()
-sha256sums=('2348b5748edbf6a2f83a1e899f21fc9f03737cfa79529da0bb57081fa490e2bd'
+sha256sums=('13014a64c97694a1aebc439ff0b921cbdce3c3aaf6e3b0e9299a7f0747c91a51'
             'e52bafdd21264b7e809712f70731245326168a2e9f8fb7d1a3104703ab5821bc'
             '4dfa4502df8d72212ccfb96cfc2509c9a1461f542adb38304af54097b30ca0d5'
             'cba6a5df66a42ced857822e1099be00f2e37ec800f29cbbfca7210020140291b'
