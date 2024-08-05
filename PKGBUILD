@@ -1,6 +1,6 @@
 # Maintainer: pikl <me@pikl.uk>
 pkgname=actual-server
-pkgver=24.6.0
+pkgver=24.8.0
 pkgrel=1
 pkgdesc="Actual Budget Server"
 arch=('any')
