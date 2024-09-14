@@ -1,6 +1,6 @@
 # Maintainer: pikl <me@pikl.uk>
 pkgname=actual-server
-pkgver=24.8.0
+pkgver=24.9.0
 pkgrel=1
 pkgdesc="Actual Budget Server"
 arch=('any')
@@ -30,7 +30,7 @@ source=(
     'load-config.js.patch'
 )
 noextract=()
-sha256sums=('13014a64c97694a1aebc439ff0b921cbdce3c3aaf6e3b0e9299a7f0747c91a51'
+sha256sums=('cb6e8912c7c5c1eca00996f5613c6a240229a8493f4d3899129bfadd43f4a958'
             'e52bafdd21264b7e809712f70731245326168a2e9f8fb7d1a3104703ab5821bc'
             '4dfa4502df8d72212ccfb96cfc2509c9a1461f542adb38304af54097b30ca0d5'
             'cba6a5df66a42ced857822e1099be00f2e37ec800f29cbbfca7210020140291b'
