@@ -3,7 +3,7 @@
 
 # Official Documentation: https://actualbudget.org/docs/install/
 pkgname=actual
-pkgver=25.3.0
+pkgver=master
 pkgrel=1
 pkgdesc="Actual Budget"
 arch=('any')
@@ -21,28 +21,20 @@ options=('!strip')
 install=
 changelog=
 source=(
-    "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/heads/v${pkgver}.tar.gz"
+    "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/heads/${pkgver}.tar.gz"
     'actual.service'
-    'sysusers'
-    'tmpfiles'
-    # Ensures the data directory is /var/lib/actual rather than
-    # the project root (/usr/share/webapps/actual) which
-    # is not writable by actual system user.
-    # See following issue upstream:
-    # https://github.com/actualbudget/actual/issues/2011#issuecomment-1837295607
-    'load-config.js.patch'
+    'actual.sysusers'
+    'actual.tmpfiles'
+    'actual.conf'
 )
 noextract=()
 sha256sums=('3c73f8c59ddc31d74aba73a4506432370bc135a75ed6aea44b23ed3bb576ea7c'
-            'e76d13ac327c111e12a552c698796fe845605d431734c79c99b65a41e5d8ce9d'
-            '4dfa4502df8d72212ccfb96cfc2509c9a1461f542adb38304af54097b30ca0d5'
+            'e537e1e4afb4c5374efe017494473fac7bb9552dafa771b7259bddcc869756db'
+            '8972650fe50b14b543278d243d0bfe7ac655cdd5b4c63ce92a7ad27c835764e7'
             'cba6a5df66a42ced857822e1099be00f2e37ec800f29cbbfca7210020140291b'
-            '98bf6d75bbdc56d447f1766dd9a251422306cd6674d6e5c18e0ddb6ab4244729')
+            '81a69c3376a1470c2f30aea4ebb3a354cf3c6a14679fa676e427e8b144d29f7c')
+backup=('etc/conf.d/actual')
 
-prepare() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
-    patch -p0 -i "${srcdir}/load-config.js.patch"
-}
 
 build() {
     cd "${srcdir}/${pkgname}-${pkgver}"
@@ -59,7 +51,9 @@ package() {
     install -d -m 0750 "${pkgdir}/var/lib/actual"
 
     cd "${srcdir}"
-    install -D -m 0644 sysusers "${pkgdir}/usr/lib/sysusers.d/actual.conf"
-    install -D -m 0644 tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/actual.conf"
+    install -D -m 0644 actual.sysusers "${pkgdir}/usr/lib/sysusers.d/actual.conf"
+    install -D -m 0644 actual.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/actual.conf"
     install -D -m 0644 actual.service "${pkgdir}/usr/lib/systemd/system/actual.service"
+    install -D -m 0644 actual.conf "$pkgdir"/etc/conf.d/actual
+
 }

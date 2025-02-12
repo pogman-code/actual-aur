@@ -5,6 +5,7 @@ Description=Actual Server
 Type=simple
 WorkingDirectory=/usr/share/webapps/actual
 User=actual
+EnvironmentFile=/etc/conf.d/actual
 ExecStart=/usr/bin/yarn start:server
 
 [Install]
