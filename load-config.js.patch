@@ -1,6 +1,6 @@
---- src/load-config.js	2024-12-20 18:01:39.312760450 +0000
-+++ src/load-config.js_patched	2024-12-20 18:02:25.796884483 +0000
-@@ -10,7 +10,7 @@
+--- packages/sync-server/src/load-config.js	2025-02-12 10:15:34.000000000 +0100
++++ packages/sync-server/src/load-config.js.patched	2025-02-12 10:52:43.885120960 +0100
+@@ -13,7 +13,7 @@
  debug(`project root: '${projectRoot}'`);
  export const sqlDir = path.join(projectRoot, 'src', 'sql');
  
