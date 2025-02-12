@@ -1,12 +1,13 @@
 [Unit]
 Description=Actual Server
+After=network.target
 
 [Service]
-Type=simple
 WorkingDirectory=/usr/share/webapps/actual
 User=actual
 EnvironmentFile=/etc/conf.d/actual
 ExecStart=/usr/bin/yarn start:server
+Restart=on-watchdog
 
 [Install]
 WantedBy=multi-user.target
