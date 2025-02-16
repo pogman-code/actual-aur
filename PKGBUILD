@@ -3,7 +3,7 @@
 
 # Official Documentation: https://actualbudget.org/docs/install/
 pkgname=actual-server
-pkgver=master
+pkgver=25.2.1
 pkgrel=1
 pkgdesc="Actual Budget Server"
 arch=('any')
@@ -13,7 +13,7 @@ depends=('yarn' 'nodejs')
 makedepends=('git')
 backup=("etc/conf.d/${pkgname}")
 source=(
-    "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/heads/${pkgver}.tar.gz"
+    "${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz"
     "${pkgname}.service"
     "${pkgname}.sysusers"
     "${pkgname}.tmpfiles"

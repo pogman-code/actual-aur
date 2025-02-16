@@ -1,6 +1,6 @@
 pkgbase = actual-server
 	pkgdesc = Actual Budget Server
-	pkgver = master
+	pkgver = 25.2.1
 	pkgrel = 1
 	url = https://github.com/actualbudget/actual
 	arch = any
@@ -9,7 +9,7 @@ pkgbase = actual-server
 	depends = yarn
 	depends = nodejs
 	backup = etc/conf.d/actual-server
-	source = actual-server-master.tar.gz::https://github.com/actualbudget/actual/archive/refs/heads/master.tar.gz
+	source = actual-server-25.2.1.tar.gz::https://github.com/actualbudget/actual/archive/refs/tags/v25.2.1.tar.gz
 	source = actual-server.service
 	source = actual-server.sysusers
 	source = actual-server.tmpfiles
