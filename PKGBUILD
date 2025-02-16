@@ -29,7 +29,7 @@ __gitpkg="${pkgname%-*}-${pkgver}"
 build() {
     cd "${srcdir}/${__gitpkg}"
     yarn config set enableTelemetry 0
-    yarn workspaces focus actual-sync --production
+    yarn workspaces focus @actual-app/sync-server --production
 }
 
 package() {
